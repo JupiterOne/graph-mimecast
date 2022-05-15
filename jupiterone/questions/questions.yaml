@@ -1,15 +1,23 @@
 ---
-sourceId: managed:template
+sourceId: managed:mimecast
 integrationDefinitionId: '${integration_definition_id}'
-questions: []
-  # - id: integration-question-template-replace-me
-  #   title: What kinds of questions will this integration support?
+questions: 
+  # - id: integration-question-mimecast-user-incomplete-HIPPA-campaign-awareness-training
+  #   title: Which mimecast user has not completed HIPPA security awareness training? 
   #   description:
-  #     TODO Every integration should contribute questions! Please be carefule
-  #     to replace this before deploying the integration to JupiterOne.
+  #     Identify mimecast users that have not completed HIPPA security awareness training.
   #   queries:
-  #     - name: good
+  #     - name: bad
   #       query: |
-  #         find * with _integrationDefinitionId = '${integration_definition_id}'
+  #         FIND mimecast_user WITH active = true AS u
+  #           THAT ASSIGNED mimecast_awareness_campaign AS a
+  #           THAT !COMPLETED Training WITH name ~= 'HIPPA'
+  #         RETURN
+  #           u.displayName,u.email,
+  #           a.numCompleted,a.numSent
   #   tags:
-  #     - template
+  #     - mimecast
+  #   compliance:
+  #     - standard: HIPPA Security awareness and training
+  #       requirements:
+  #         - '164.308'     
