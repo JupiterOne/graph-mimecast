@@ -1,5 +1,5 @@
 ---
-sourceId: managed:mimecast
+sourceId: managed:template
 integrationDefinitionId: '${integration_definition_id}'
 questions: 
   # - id: integration-question-mimecast-user-incomplete-HIPPA-campaign-awareness-training
