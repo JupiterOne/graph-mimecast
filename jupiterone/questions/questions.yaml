@@ -17,7 +17,4 @@ questions:
   #           a.numCompleted,a.numSent
   #   tags:
   #     - mimecast
-  #   compliance:
-  #     - standard: HIPPA Security awareness and training
-  #       requirements:
-  #         - '164.308'     
+  #     - compliance:      
