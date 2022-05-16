@@ -15,6 +15,6 @@ questions:
       RETURN
         u.displayName,u.email,
         a.numCompleted,a.numSent
-    tags:
-    - Mimecast
-    - compliance        
+  tags:
+  - Mimecast
+  - compliance        
