@@ -2,19 +2,19 @@
 sourceId: managed:template
 integrationDefinitionId: '${integration_definition_id}'
 questions: 
-  # - id: integration-question-mimecast-user-incomplete-HIPPA-campaign-awareness-training
-  #   title: Which mimecast user has not completed HIPPA security awareness training? 
+  # - id: integration-question-Mimecast-user-incomplete-HIPAA-campaign-awareness-training
+  #   title: Which Mimecast user has not completed HIPAA security awareness training? 
   #   description:
-  #     Identify mimecast users that have not completed HIPPA security awareness training.
+  #     Identify Mimecast users that have not completed HIPAA security awareness training.
   #   queries:
   #     - name: bad
   #       query: |
-  #         FIND mimecast_user WITH active = true AS u
-  #           THAT ASSIGNED mimecast_awareness_campaign AS a
-  #           THAT !COMPLETED Training WITH name ~= 'HIPPA'
+  #         FIND Mimecast_user WITH active = true AS u
+  #           THAT ASSIGNED Mimecast_awareness_campaign AS a
+  #           THAT !COMPLETED Training WITH name ~= 'HIPAA'
   #         RETURN
   #           u.displayName,u.email,
   #           a.numCompleted,a.numSent
   #   tags:
-  #     - mimecast
-  #     - compliance:      
+  #     - Mimecast
+  #     - compliance      
