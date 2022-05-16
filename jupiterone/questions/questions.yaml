@@ -10,7 +10,7 @@ questions:
   - name: bad
     query: |
       FIND mimecast_user WITH active = true AS u
-        THAT ASSIGNED Mimecast_awareness_campaign AS a
+        THAT ASSIGNED mimecast_awareness_campaign AS a
         THAT !COMPLETED Training WITH name ~= 'HIPAA'
       RETURN
         u.displayName,u.email,
