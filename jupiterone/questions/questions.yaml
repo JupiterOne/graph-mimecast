@@ -1,15 +1,20 @@
 ---
-sourceId: managed:template
+sourceId: managed:mimecast
 integrationDefinitionId: '${integration_definition_id}'
-questions: []
-  # - id: integration-question-template-replace-me
-  #   title: What kinds of questions will this integration support?
-  #   description:
-  #     TODO Every integration should contribute questions! Please be carefule
-  #     to replace this before deploying the integration to JupiterOne.
-  #   queries:
-  #     - name: good
-  #       query: |
-  #         find * with _integrationDefinitionId = '${integration_definition_id}'
-  #   tags:
-  #     - template
+questions: 
+- id: integration-question-Mimecast-user-incomplete-HIPAA-campaign-awareness-training
+  title: Which Mimecast user has not completed HIPAA security awareness training? 
+  description:
+    Identify Mimecast users that have not completed HIPAA security awareness training.
+  queries:
+  - name: bad
+    query: |
+      FIND mimecast_user WITH active = true AS u
+        THAT ASSIGNED mimecast_awareness_campaign AS a
+        THAT !COMPLETED Training WITH name ~= 'HIPAA'
+      RETURN
+        u.displayName,u.email,
+        a.numCompleted,a.numSent
+  tags:
+  - Mimecast
+  - compliance        
