@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+[1.1.2] - 2022-09-28
+
+### Changed
+
+- update sdk
+
 [1.1.1] - 2022-03-07
 
 ### Fixed
