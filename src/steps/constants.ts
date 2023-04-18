@@ -77,3 +77,7 @@ export const Relationships: Record<
     targetType: Entities.AWARENESS_CAMPAIGN._type,
   },
 };
+
+export const INGESTION_SOURCE_IDS = {
+  AWARENESS_CAMPAIGNS: 'awareness-campaigns',
+};

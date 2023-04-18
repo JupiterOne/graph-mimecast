@@ -3,8 +3,10 @@ import {
   IntegrationValidationError,
   IntegrationInstanceConfigFieldMap,
   IntegrationInstanceConfig,
+  IntegrationIngestionConfigFieldMap,
 } from '@jupiterone/integration-sdk-core';
 import { createAPIClient } from './client';
+import { INGESTION_SOURCE_IDS } from './steps/constants';
 
 /**
  * A type describing the configuration fields required to execute the
@@ -77,3 +79,12 @@ export async function validateInvocation(
   const apiClient = createAPIClient(config, context.logger);
   await apiClient.verifyAuthentication();
 }
+
+export const ingestionConfig: IntegrationIngestionConfigFieldMap = {
+  [INGESTION_SOURCE_IDS.AWARENESS_CAMPAIGNS]: {
+    title: 'Awareness Campaigns',
+    description: 'Ingestion source that groups awareness campaigns steps',
+    defaultsToDisabled: true,
+    cannotBeDisabled: false,
+  },
+};
