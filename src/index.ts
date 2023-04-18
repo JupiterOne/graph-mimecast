@@ -4,6 +4,7 @@ import {
   validateInvocation,
   IntegrationConfig,
   instanceConfigFields,
+  ingestionConfig,
 } from './config';
 
 export const invocationConfig: IntegrationInvocationConfig<IntegrationConfig> =
@@ -11,4 +12,5 @@ export const invocationConfig: IntegrationInvocationConfig<IntegrationConfig> =
     instanceConfigFields,
     validateInvocation,
     integrationSteps,
+    ingestionConfig,
   };

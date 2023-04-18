@@ -10,7 +10,12 @@ import {
 import { createAPIClient } from '../../client';
 import { IntegrationConfig } from '../../config';
 import { ACCOUNT_ENTITY_KEY } from '../account';
-import { Entities, Relationships, Steps } from '../constants';
+import {
+  Entities,
+  INGESTION_SOURCE_IDS,
+  Relationships,
+  Steps,
+} from '../constants';
 import { createAwarenessCampaignEntity } from './converter';
 
 export async function fetchAwarenessCampaigns({
@@ -99,6 +104,7 @@ export const awarenessCampaignSteps: IntegrationStep<IntegrationConfig>[] = [
     name: 'Fetch Awareness Campaigns',
     entities: [Entities.AWARENESS_CAMPAIGN],
     relationships: [Relationships.ACCOUNT_HAS_AWARENESS_CAMPAIGN],
+    ingestionSourceId: INGESTION_SOURCE_IDS.AWARENESS_CAMPAIGNS,
     dependsOn: [Steps.ACCOUNT],
     executionHandler: fetchAwarenessCampaigns,
   },
@@ -110,6 +116,7 @@ export const awarenessCampaignSteps: IntegrationStep<IntegrationConfig>[] = [
       Relationships.USER_ASSIGNED_AWARENESS_CAMPAIGN,
       Relationships.USER_COMPLETED_AWARENESS_CAMPAIGN,
     ],
+    ingestionSourceId: INGESTION_SOURCE_IDS.AWARENESS_CAMPAIGNS,
     dependsOn: [Steps.USERS, Steps.AWARENESS_CAMPAIGNS],
     executionHandler: fetchAwarenessCampaignEnrollment,
   },
