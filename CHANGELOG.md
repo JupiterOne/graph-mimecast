@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+[1.2.0] - 2023-04-17
+
+### Added
+
+- Add new ingestion source to group awareness campaigns steps
+
 [1.1.2] - 2022-09-28
 
 ### Changed
