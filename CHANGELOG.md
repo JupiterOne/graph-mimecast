@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+[1.3.0] - 2023-05-30
+
+### Changed
+
+- Add two additional ingestion sources: user & domains
+
 [1.2.0] - 2023-04-17
 
 ### Added
