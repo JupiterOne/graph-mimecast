@@ -6,7 +6,12 @@ import {
 } from '@jupiterone/integration-sdk-core';
 import { createAPIClient } from '../../client';
 import { IntegrationConfig } from '../../config';
-import { Entities, Relationships, Steps } from '../constants';
+import {
+  Entities,
+  INGESTION_SOURCE_IDS,
+  Relationships,
+  Steps,
+} from '../constants';
 import { createUserEntity } from './converter';
 
 export async function fetchUsers({
@@ -47,6 +52,7 @@ export const userSteps: IntegrationStep<IntegrationConfig>[] = [
   {
     id: Steps.USERS,
     name: 'Fetch Users',
+    ingestionSourceId: INGESTION_SOURCE_IDS.USERS,
     entities: [Entities.USER],
     relationships: [Relationships.DOMAIN_HAS_USER],
     dependsOn: [Steps.DOMAINS],

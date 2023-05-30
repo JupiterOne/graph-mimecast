@@ -82,9 +82,23 @@ export async function validateInvocation(
 
 export const ingestionConfig: IntegrationIngestionConfigFieldMap = {
   [INGESTION_SOURCE_IDS.AWARENESS_CAMPAIGNS]: {
-    title: 'Awareness Campaigns',
-    description: 'Ingestion source that groups awareness campaigns steps',
-    defaultsToDisabled: true,
+    title: 'Mimecast Awareness Campaigns',
+    description:
+      'Organized effort aimed at educating employees about cybersecurity.',
+    defaultsToDisabled: false,
+    cannotBeDisabled: false,
+  },
+  [INGESTION_SOURCE_IDS.DOMAINS]: {
+    title: 'Mimecast Domains',
+    description: 'A web address or email domain being secured by Mimecast.',
+    defaultsToDisabled: false,
+    cannotBeDisabled: false,
+  },
+  [INGESTION_SOURCE_IDS.USERS]: {
+    title: 'Mimecast Users',
+    description:
+      "An individual using Mimecast's email and web security services.",
+    defaultsToDisabled: false,
     cannotBeDisabled: false,
   },
 };
