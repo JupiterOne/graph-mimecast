@@ -9,7 +9,12 @@ import {
 import { createAPIClient } from '../../client';
 import { IntegrationConfig } from '../../config';
 import { ACCOUNT_ENTITY_KEY } from '../account';
-import { Entities, Relationships, Steps } from '../constants';
+import {
+  Entities,
+  INGESTION_SOURCE_IDS,
+  Relationships,
+  Steps,
+} from '../constants';
 import { createDomainEntity } from './converter';
 
 export async function fetchDomains({
@@ -47,6 +52,7 @@ export const domainSteps: IntegrationStep<IntegrationConfig>[] = [
   {
     id: Steps.DOMAINS,
     name: 'Fetch Domains',
+    ingestionSourceId: INGESTION_SOURCE_IDS.DOMAINS,
     entities: [Entities.DOMAIN],
     relationships: [Relationships.ACCOUNT_HAS_DOMAIN],
     dependsOn: [Steps.ACCOUNT],

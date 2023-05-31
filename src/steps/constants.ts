@@ -80,4 +80,6 @@ export const Relationships: Record<
 
 export const INGESTION_SOURCE_IDS = {
   AWARENESS_CAMPAIGNS: 'awareness-campaigns',
+  DOMAINS: 'domains',
+  USERS: 'users',
 };
