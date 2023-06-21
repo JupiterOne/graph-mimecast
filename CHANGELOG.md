@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+[2.0.0] - 2023-06-21
+
+### Changed
+
+- Upgrade repo to node 18
+
 [1.3.0] - 2023-05-30
 
 ### Changed
