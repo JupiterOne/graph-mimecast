@@ -1,6 +1,6 @@
 {
   "name": "@jupiterone/graph-mimecast",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "A JupiterOne Integration for ingesting data from Mimecast",
   "license": "MPL-2.0",
   "engines": {
